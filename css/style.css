@@ -97,6 +97,8 @@ ul {
 .nav-items,
 .contacts-items {
   margin-left: 50px;
+  display: flex;
+  align-items: center;
 }
 .nav-items:first-child,
 .contacts-items:first-child {
@@ -122,9 +124,13 @@ ul {
   color: var(--section-title-color);
   line-height: 1.17;
 }
+
 .contacts-link {
   line-height: 1.14;
   color: var(--primery-text-color);
+  fill: var(--primery-text-color);
+  display: inline-flex;
+  align-items: center;
 }
 .header-link:hover,
 .header-link:focus,
@@ -133,11 +139,37 @@ ul {
   color: var(--accent-color);
   outline: none;
 }
+.envelope-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+}
+.telephone-icon {
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+}
+.contacts-link:hover,
+.contacts-link:focus {
+  fill: var(--accent-color);
+}
 
 /* Герой */
 .section-hero {
-  background-color: var(--hero-footer-bgc);
   padding: 200px 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/hero-foto.jpg');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .section-hero > .container {
   text-align: center;
@@ -168,6 +200,28 @@ ul {
   flex-basis: 270px;
   margin-left: 30px;
 }
+.benefits-items::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 30px;
+}
+.benefits-items:nth-child(1)::before {
+  background-image: url('../images/Group1.svg');
+}
+.benefits-items:nth-child(2)::before {
+  background-image: url('../images/Group2.svg');
+}
+.benefits-items:nth-child(3)::before {
+  background-image: url('../images/Group3.svg');
+}
+.benefits-items:nth-child(4)::before {
+  background-image: url('../images/Group4.svg');
+}
+
 .benefits-items:first-child {
   margin-left: 0;
 }
@@ -214,6 +268,9 @@ ul {
 
   text-align: center;
   background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .team-section-item:first-child {
   margin-left: 0;
@@ -224,7 +281,61 @@ ul {
   margin: 30px 0 10px;
 }
 .team-section-item p {
+  margin-bottom: 16px;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
   margin-bottom: 30px;
+}
+.social-item {
+  margin: 0 5px;
+  border-radius: 50%;
+  border-radius: 50%;
+}
+
+.social-item-link {
+}
+.social-item-link:hover {
+  background-color: var(--accent-color);
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+
+  fill: green;
+}
+
+.social-icon:hover {
+  fill: var(--white-color);
+}
+
+/* Постоянные клиенты */
+.clients-section-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+.clients-section-items {
+}
+.clients-section-items + .clients-section-items {
+  margin-left: 30px;
+}
+
+.clients-icon {
+  width: 170px;
+  height: 92px;
+  display: block;
+  fill: #afb1b8;
+  border: 2px solid #afb1b8;
+  border-radius: 4px;
+}
+.clients-icon:hover {
+  fill: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 /* Футер */
@@ -232,6 +343,36 @@ ul {
   background-color: var(--hero-footer-bgc);
   padding: 60px 0;
 }
+.footer > .container {
+  display: flex;
+}
+.social-footer {
+  margin-left: 70px;
+  color: var(--white-color);
+  line-height: 1.17;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.social-footer-list {
+  display: flex;
+  list-style: none;
+}
+.social-footer-item + .social-footer-item {
+  margin-left: 10px;
+}
+.social-footer-link {
+}
+.social-footer-icon {
+  width: 44px;
+  height: 44px;
+  margin-top: 20px;
+  fill: rgba(256, 256, 256, 0.1);
+  color: var(--white-color);
+}
+.social-footer-icon:hover {
+  fill: var(--accent-color);
+}
+
 .footer .logo {
   color: var(--white-color);
   display: inline-block;
@@ -271,7 +412,7 @@ ul {
   color: var(--white-color);
   background-color: var(--accent-color);
   outline: none;
-  filter: drop-shadow(0px 4px 4px var(--logos-buttons-shadow));
+  box-shadow: 0px 4px 4px var(--logos-buttons-shadow);
 }
 
 .portfolio-buttons-item {
@@ -297,6 +438,9 @@ ul {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
+}
+.portfolio-project-item:hover {
+  box-shadow: 0px 4px 4px var(--logos-buttons-shadow);
 }
 
 .card-content {
